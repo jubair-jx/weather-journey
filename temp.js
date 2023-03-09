@@ -21,14 +21,13 @@ const setTheNewFunction = (id, text) => {
 
 document.getElementById("seacrh-btn").addEventListener("click", () => {
   let getInputvalue = document.getElementById("input-value").value;
-  document.getElementById("city").innerText = getInputvalue;
 
-  if (!/^[a-zA-Z]+$/.test(getInputvalue)) {
+  if (!isNaN(getInputvalue)) {
     // getInputvalue = "";
     alert("Please enter only alphabetic characters");
     return;
   }
-
+  document.getElementById("city").innerText = getInputvalue;
   loadData(getInputvalue);
 });
 loadData("Dhaka");
